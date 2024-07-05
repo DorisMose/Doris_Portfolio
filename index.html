@@ -74,6 +74,47 @@
             border: 5px solid white;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
+        .samples {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sample {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sample img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sample img:hover {
+    transform: scale(1.05);
+}
+
+.sample a {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sample a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sample {
+        width: 100%;
+    }
+}
         .service-box {
             background: white;
             padding: 2rem;
@@ -119,7 +160,7 @@
 </head>
 <body>
     <header>
-        <h1>Doris</h1>
+        <h1>Doris Mose</h1>
     </header>
     <nav>
         <a href="#home">Home</a>
@@ -138,33 +179,53 @@
 
     <div class="container">
         <section id="services">
-    <h2>Services</h2>
-    <div class="service">
-        <h3>Content Writing</h3>
-        <p>Engaging and informative content tailored to your audience. From blog posts to in-depth articles, I craft compelling narratives that educate and inspire. Here are some samples of my work:</p>
-        <ul>
-            <li><a href="https://docs.google.com/document/d/1a7ZaAt8kG4eU6U6Vv76Gry7MojZDQhFGsZo7iXYJD8k/edit?usp=sharing" target="_blank">Blog Post: "How to Set Up a Proxy Server"</a></li>
-            <li><a href="https://docs.google.com/document/d/1pN_WU-YGh1Us6afTWd66M3WQxhrMkHFEybGEN4XJf8U/edit?usp=sharing" target="_blank">Product Review: "The 9 Best Travel Guitars for 2020"</a></li>
-            <li><a href="https://docs.google.com/document/d/1QlOmETXrIrfGT4lYk0kWaxLAZAfc5buHQ_15Fk15N-A/edit?usp=sharing" target="_blank">White Paper: "Why Is Machine Learning Important"</a></li>
-        </ul>
-    </div>
-    <div class="service">
-        <h3>Copywriting</h3>
-        <p>Persuasive copy that drives action. Whether it's product descriptions, landing pages, or email campaigns, I create compelling content that converts. Check out these examples:</p>
-        <ul>
-            
-            <li><a href="https://docs.google.com/document/d/1N8UCZxjGGyDywz4M-s82ZQcgauTBfSPM6UY6ACvwIzw/edit?usp=sharing" target="_blank">Landing Page: "Think and Grow Rich  Landing Page"</a></li>
-            <li><a href="https://docs.google.com/document/d/1W3IgKsaoHEvvbx7hXa5zurvYstgJIAwbiKZWlA4ntqY/edit?usp=sharing" target="_blank">Email Campaign: "The Magnetic Client Generator Program"</a></li>
-        </ul>
-    </div>
-    <div class="service">
-        <h3>Script Writing</h3>
-        <p>Captivating scripts for various media formats. From YouTube videos to podcasts and TV commercials, I write scripts that engage and entertain. Here are some samples:</p>
-        <ul>
-            <li><a href="https://docs.google.com/document/d/1nPsfUqTcHXvGZVu3cxv1W7rcLHajyvzCDi3OeOjWkjw/edit?usp=sharing" target="_blank">YouTube Video: "How to make over a Billion Dollars with Ecommerce Marketing"</a></li>
-            
-    </div>
-</section>
+            <h2>Services</h2>
+            <div class="service">
+                <h3>Content Writing</h3>
+                <p>Engaging and informative content tailored to your audience. From blog posts to in-depth articles, I craft compelling narratives that educate and inspire. Here are some samples of my work:</p>
+                <div class="samples">
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/proxy-5301801__340.jpg" alt="How to Set Up a Proxy Server">
+                        <a href="https://docs.google.com/document/d/1a7ZaAt8kG4eU6U6Vv76Gry7MojZDQhFGsZo7iXYJD8k/edit?usp=sharing" target="_blank">Blog Post: "How to Set Up a Proxy Server"</a>
+                    </div>
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/guitar.jpg" alt="The 9 Best Travel Guitars for 2020">
+                        <a href="https://docs.google.com/document/d/1pN_WU-YGh1Us6afTWd66M3WQxhrMkHFEybGEN4XJf8U/edit?usp=sharing" target="_blank">Product Review: "The 9 Best Travel Guitars for 2020"</a>
+                    </div>
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/machinelearning.jpg" alt="Why Is Machine Learning Important">
+                        <a href="https://docs.google.com/document/d/1QlOmETXrIrfGT4lYk0kWaxLAZAfc5buHQ_15Fk15N-A/edit?usp=sharing" target="_blank">White Paper: "Why Is Machine Learning Important"</a>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <h3>Copywriting</h3>
+                <p>Persuasive copy that drives action. Whether it's product descriptions, landing pages, or email campaigns, I create compelling content that converts. Check out these examples:</p>
+                <div class="samples">
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/ThinkandGrowRichLandPage.jpg" alt="Think and Grow Rich Landing Page">
+                        <a href="https://docs.google.com/document/d/1N8UCZxjGGyDywz4M-s82ZQcgauTBfSPM6UY6ACvwIzw/edit?usp=sharing" target="_blank">Landing Page: "Think and Grow Rich  Landing Page"</a>
+                    </div>
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/TheMagneticProgram.jpg" alt="The Magnetic Client Generator Program">
+                        <a href="https://docs.google.com/document/d/1W3IgKsaoHEvvbx7hXa5zurvYstgJIAwbiKZWlA4ntqY/edit?usp=sharing" target="_blank">Email Campaign: "The Magnetic Client Generator Program"</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="service">
+                <h3>Script Writing</h3>
+                <p>Captivating scripts for various media formats. From YouTube videos to podcasts and TV commercials, I write scripts that engage and entertain. Here are some samples:</p>
+                <div class="samples">
+                    <div class="sample">
+                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/billion.jpg" alt="How to make over a Billion Dollars with Ecommerce Marketing">
+                        <a href="https://docs.google.com/document/d/1nPsfUqTcHXvGZVu3cxv1W7rcLHajyvzCDi3OeOjWkjw/edit?usp=sharing" target="_blank">YouTube Video: "How to make over a Billion Dollars with Ecommerce Marketing"</a>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+        </section>
 
         <section id="about">
             <h2>About Me</h2>
