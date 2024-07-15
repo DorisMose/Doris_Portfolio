@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doris - Professional Writer</title>
+    <title>Doris Mose - Professional Writer</title>
     <style>
         :root {
             --primary-color: #ff6b6b;
@@ -24,18 +24,17 @@
             color: white;
             padding: 2rem 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
-        .logo-container {
+        .header-content {
             display: flex;
+            justify-content: space-between;
             align-items: center;
+            width: 80%;
+            margin: auto;
         }
         .logo {
             width: 60px;
             height: 60px;
-            margin-right: 20px;
             background-color: white;
             border-radius: 50%;
             display: flex;
@@ -46,6 +45,7 @@
             color: var(--primary-color);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
             box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            margin-right: 20px;
         }
         header h1 {
             margin: 0;
@@ -139,20 +139,6 @@
         .service-box h3 {
             color: var(--primary-color);
         }
-        .service p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            color: #333;
-        }
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -165,16 +151,34 @@
         .btn:hover {
             background-color: #ff8c8c;
         }
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
         @media (max-width: 768px) {
             .sample {
                 width: 100%;
             }
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo {
+                margin-bottom: 1rem;
+            }
         }
     </style>
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23ff6b6b%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%2260%22 font-weight=%22bold%22 fill=%22white%22>DM</text></svg>">
 </head>
 <body>
     <header>
-        <div class="logo-container">
+        <div class="header-content">
             <div class="logo">DM</div>
             <h1>Doris Mose</h1>
         </div>
@@ -198,7 +202,7 @@
             <h2>Services</h2>
             <div class="service-box">
                 <h3>Content Writing</h3>
-                <p>Engaging and informative content tailored to your audience. From blog posts to in-depth articles, I craft compelling narratives that educate and inspire. Here are some samples of my work:</p>
+                <p>Engaging and informative content tailored to your audience. From blog posts to in-depth articles, I craft compelling narratives that educate and inspire.</p>
                 <div class="samples">
                     <div class="sample">
                         <img src="https://raw.githubusercontent.com/DorisMose/Image/main/proxy-5301801__340.jpg" alt="How to Set Up a Proxy Server">
@@ -216,7 +220,7 @@
             </div>
             <div class="service-box">
                 <h3>Copywriting</h3>
-                <p>Persuasive copy that drives action. Whether it's product descriptions, landing pages, or email campaigns, I create compelling content that converts. Check out these examples:</p>
+                <p>Persuasive copy that drives action. Whether it's product descriptions, landing pages, or email campaigns, I create compelling content that converts.</p>
                 <div class="samples">
                     <div class="sample">
                         <img src="https://raw.githubusercontent.com/DorisMose/Image/main/ThinkandGrowRichLandPage.jpg" alt="Think and Grow Rich Landing Page">
@@ -230,7 +234,7 @@
             </div>
             <div class="service-box">
                 <h3>Script Writing</h3>
-                <p>Captivating scripts for various media formats. From YouTube videos to podcasts and TV commercials, I write scripts that engage and entertain. Here's a sample:</p>
+                <p>Captivating scripts for various media formats. From YouTube videos to podcasts and TV commercials, I write scripts that engage and entertain.</p>
                 <div class="samples">
                     <div class="sample">
                         <img src="https://raw.githubusercontent.com/DorisMose/Image/main/billion.jpg" alt="How to make over a Billion Dollars with Ecommerce Marketing">
@@ -253,7 +257,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Doris - Professional Writer. All rights reserved.</p>
+        <p>&copy; 2024 Doris Mose - Professional Writer. All rights reserved.</p>
     </footer>
 </body>
 </html>
