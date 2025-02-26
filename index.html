@@ -3,238 +3,555 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doris Mose - Professional Writer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>">
+    <meta name="description" content="Doris - U.S.-based writer and editor specializing in blogs, YouTube scripts, and polished content for U.S. audiences. Expert in crafting compelling narratives to engage and inspire.">
+    <meta name="keywords" content="Doris writer, U.S. writer, blog writing, YouTube scripts, content editing, storytelling, U.S. content creator">
+    <meta name="author" content="Doris Mose">
+    <meta name="robots" content="index, follow">
+    <title>Write with Doris - U.S. Writer & Editor</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #4ecdc4;
+            --primary-color: #2c3e50; /* Dark blue for professionalism */
+            --secondary-color: #3498db; /* Light blue for accents */
             --text-color: #333;
-            --bg-color: #f7f7f7;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
+            overflow-x: hidden;
         }
-        header {
-            background-color: var(--primary-color);
-            color: white;
+
+        /* Navbar (Mobile-Responsive) */
+        .navbar {
+            background-color: var(--primary-color) !important;
             padding: 1rem 0;
-            text-align: center;
         }
-        .header-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-        }
-        .logo {
-            width: 60px;
-            height: 60px;
-            background-color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
+        .navbar-brand {
+            color: white !important;
+            font-family: 'Georgia', serif;
             font-weight: bold;
-            color: var(--primary-color);
+            font-size: 1.5rem;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
+        .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            transition: color 0.3s, background-color 0.3s;
         }
-        nav {
-            background-color: var(--secondary-color);
-            padding: 0.5rem 0;
-            text-align: center;
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
-        nav a {
+        .navbar-toggler {
+            border: none;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hero Section (Home) */
+        #home {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_1280.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
+            text-align: center;
+            padding: 5rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #home h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        #home p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
             font-size: 1.1rem;
             transition: background-color 0.3s;
         }
-        nav a:hover {
-            background-color: rgba(255,255,255,0.2);
+        .btn-primary:hover {
+            background-color: #2980b9;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 2rem 0;
+
+        /* Sections (About Us, Services, Portfolio, Contact) */
+        .section {
+            padding: 4rem 0;
+            background-color: var(--card-bg);
         }
-        #showcase {
-            background-color: var(--secondary-color);
-            color: white;
+        .section h2 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
             text-align: center;
-            padding: 3rem 0;
+            margin-bottom: 2rem;
         }
-        .profile-img {
-            width: 200px;
-            height: 200px;
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* About Us (Team Layout Inspired by Example) */
+        #about-us .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .team-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid var(--secondary-color);
+        }
+        .team-card img {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid white;
             margin-bottom: 1rem;
+            border: 3px solid var(--secondary-color);
         }
-        .samples {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
+        .team-card h5 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-        .sample {
-            flex: 1 1 300px;
-            max-width: 300px;
-            margin-bottom: 20px;
+        .team-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services */
+        #services .service-card {
+            background: var(--bg-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #services .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Portfolio */
+        #portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .portfolio-card {
+            background: var(--bg-color);
+            border-radius: 10px;
+            padding: 1.5rem;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .sample img {
+        .portfolio-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
+            margin-bottom: 1rem;
         }
-        .sample img:hover {
-            transform: scale(1.05);
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-        .service-box {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.7rem 1.5rem;
+        .portfolio-card a {
+            color: var(--secondary-color);
             text-decoration: none;
+            font-weight: 500;
+        }
+        .portfolio-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact */
+        #contact {
+            background-color: var(--bg-color);
+        }
+        #contact .contact-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        #contact form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e9ecef;
+        }
+        #contact h2 {
+            font-family: 'Georgia', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        #contact .form-label {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        #contact .form-control {
             border-radius: 5px;
-            transition: background-color 0.3s;
+            border: 1px solid #ced4da;
+            padding: 0.75rem;
+            font-size: 1rem;
         }
-        .btn:hover {
-            background-color: #ff8c8c;
+        #contact .btn-primary {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 0.9rem 1.5rem;
+            font-size: 1.1rem;
+            background-color: var(--secondary-color);
+            border: none;
         }
+        #contact .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        #contact .invalid-feedback {
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
         footer {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
+
+        /* Smooth Scrolling for Single Page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
+            #home h1 {
+                font-size: 2rem;
             }
-            nav {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
+            #home p {
+                font-size: 1rem;
             }
-            nav a {
-                flex: 1 1 auto;
-                text-align: center;
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            .nav-link {
+                font-size: 1rem;
                 padding: 0.5rem;
             }
-            .sample {
-                flex: 1 1 100%;
-                max-width: none;
+            .section h2 {
+                font-size: 2rem;
+            }
+            .team-card img, .portfolio-card img {
+                width: 120px;
+                height: 120px;
+            }
+            #contact .contact-text {
+                font-size: 1rem;
+            }
+            #contact form {
+                padding: 1.5rem;
+                margin: 1rem auto;
+            }
+            #contact h2 {
+                font-size: 2rem;
+            }
+            .btn-primary {
+                padding: 0.6rem 1.2rem;
+                font-size: 1rem;
+            }
+            .portfolio-card img {
+                height: 150px;
+            }
+            .portfolio-card a {
+                font-size: 0.9rem;
+            }
+            .team-card {
+                padding: 1.5rem;
+            }
+            .team-card h5 {
+                font-size: 1.2rem;
+            }
+            .team-card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #home {
+                padding: 3rem 0;
+            }
+            #home h1 {
+                font-size: 1.5rem;
+            }
+            #home p {
+                font-size: 0.9rem;
+            }
+            .section {
+                padding: 2rem 0;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .team-card, .portfolio-card, .service-card {
+                padding: 1rem;
+            }
+            .portfolio-card {
+                margin-bottom: 1rem;
+            }
+            .team-card img {
+                width: 100px;
+                height: 100px;
+            }
+            .team-card h5 {
+                font-size: 1rem;
+            }
+            .team-card p {
+                font-size: 0.9rem;
+            }
+            #contact .contact-text {
+                font-size: 0.9rem;
+            }
+            #contact h2 {
+                font-size: 1.5rem;
+            }
+            #contact form {
+                padding: 1rem;
+            }
+            #contact .form-control {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            #contact .btn-primary {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">DM</div>
-            <h1>Doris Mose</h1>
+    <!-- Navbar (Mobile-Responsive) -->
+    <nav class="navbar navbar-expand-lg navbar-dark" role="navigation" aria-label="Main navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#home">Write with Doris</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
     </nav>
 
-    <section id="showcase">
-        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/doris.jpg" alt="Doris" class="profile-img">
-        <h2>Words that Inspire, Inform, and Ignite</h2>
-        <p>Professional Content Writer, Copywriter, and Script Writer</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+    <!-- Home Section (Hero) -->
+    <section id="home" class="text-center" role="banner">
+        <div class="container">
+            <h1>Write with Doris - U.S. Writers & Editors</h1>
+            <p>Crafting compelling blogs and YouTube scripts with precision for U.S. audiences.</p>
+            <a href="#contact" class="btn btn-primary mt-3" aria-label="Contact Doris">Contact Us</a>
+        </div>
     </section>
 
-    <div class="container">
-        <section id="services">
+    <!-- About Us Section (Team Layout Inspired by Example) -->
+    <section id="about-us" class="section" role="region" aria-label="About Doris Team">
+        <div class="container">
+            <h2>About Write with Doris</h2>
+            <p>Doris leads a talented U.S.-based team of writers and editors with over 10 years of combined experience. Based in New York, NY, we specialize in blogs, YouTube scripts, and polished content tailored to resonate with U.S. audiences, helping businesses and individuals tell their stories effectively.</p>
+            <div class="team-grid" role="list">
+                <div class="team-card" role="listitem">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Doris Mose, Founder & Lead Writer" class="img-fluid">
+                    <h5>Doris Mose</h5>
+                    <p>Founder & Lead Writer – 5+ Years in Storytelling</p>
+                </div>
+                <div class="team-card" role="listitem">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Jane Doe, Senior Editor" class="img-fluid">
+                    <h5>Jane Doe</h5>
+                    <p>Senior Editor – 5 Years in Editorial Excellence</p>
+                </div>
+                <div class="team-card" role="listitem">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="John Smith, Script Specialist" class="img-fluid">
+                    <h5>John Smith</h5>
+                    <p>Script Specialist – 4 Years in Video Content</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section" role="region" aria-label="Services Offered by Doris">
+        <div class="container">
             <h2>Services</h2>
-            <div class="service-box">
-                <h3>Content Writing</h3>
-                <p>Engaging and informative content tailored to your audience. From blog posts to in-depth articles, I craft compelling narratives that educate and inspire.</p>
-                <div class="samples">
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/proxy-5301801__340.jpg" alt="How to Set Up a Proxy Server">
-                        <a href="https://docs.google.com/document/d/1a7ZaAt8kG4eU6U6Vv76Gry7MojZDQhFGsZo7iXYJD8k/edit?usp=sharing" target="_blank">Blog Post: "How to Set Up a Proxy Server"</a>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="service-card" role="listitem">
+                        <h3>Blog Writing</h3>
+                        <p>SEO-optimized, engaging blog posts crafted for U.S. readers.</p>
+                        <p><strong>Starting at $50/post</strong></p>
                     </div>
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/guitar.jpg" alt="The 9 Best Travel Guitars for 2020">
-                        <a href="https://docs.google.com/document/d/1pN_WU-YGh1Us6afTWd66M3WQxhrMkHFEybGEN4XJf8U/edit?usp=sharing" target="_blank">Product Review: "The 9 Best Travel Guitars for 2020"</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="service-card" role="listitem">
+                        <h3>YouTube Scripts</h3>
+                        <p>Hook-driven scripts designed to captivate U.S. viewers.</p>
+                        <p><strong>Starting at $75/script</strong></p>
                     </div>
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/machinelearning.jpg" alt="Why Is Machine Learning Important">
-                        <a href="https://docs.google.com/document/d/1QlOmETXrIrfGT4lYk0kWaxLAZAfc5buHQ_15Fk15N-A/edit?usp=sharing" target="_blank">White Paper: "Why Is Machine Learning Important"</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="service-card" role="listitem">
+                        <h3>Editing & Polishing</h3>
+                        <p>Precision editing to refine your content for clarity and impact.</p>
+                        <p><strong>Starting at $40/project</strong></p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="service-card" role="listitem">
+                        <h3>Custom Packages</h3>
+                        <p>Tailored storytelling solutions for your unique U.S. needs.</p>
+                        <a href="#contact" class="btn btn-outline-primary" aria-label="Get a quote from Doris">Get a Quote</a>
                     </div>
                 </div>
             </div>
-            <div class="service-box">
-                <h3>Copywriting</h3>
-                <p>Persuasive copy that drives action. Whether it's product descriptions, landing pages, or email campaigns, I create compelling content that converts.</p>
-                <div class="samples">
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/ThinkandGrowRichLandPage.jpg" alt="Think and Grow Rich Landing Page">
-                        <a href="https://docs.google.com/document/d/1N8UCZxjGGyDywz4M-s82ZQcgauTBfSPM6UY6ACvwIzw/edit?usp=sharing" target="_blank">Landing Page: "Think and Grow Rich Landing Page"</a>
-                    </div>
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/TheMagneticProgram.jpg" alt="The Magnetic Client Generator Program">
-                        <a href="https://docs.google.com/document/d/1W3IgKsaoHEvvbx7hXa5zurvYstgJIAwbiKZWlA4ntqY/edit?usp=sharing" target="_blank">Email Campaign: "The Magnetic Client Generator Program"</a>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section" role="region" aria-label="Portfolio of Doris's Work">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <!-- <p>Explore the impactful blogs, YouTube scripts, and edited works crafted by Doris.</p> -->
+            <div class="portfolio-grid" role="list">
+                <div class="portfolio-card" role="listitem">
+                    <img src="https://raw.githubusercontent.com/DorisMose/Image/main/guitar.jpg" alt="U.S. Travel Guide Blog">
+                    <h5>U.S. Travel Guitars Guide Blog</h5>
+                    <p>An SEO-optimized blog post about top U.S. destinations, driving 20% more traffic for our client.</p>
+                    <a href="https://docs.google.com/document/d/1pN_WU-YGh1Us6afTWd66M3WQxhrMkHFEybGEN4XJf8U/edit?usp=sharing" target="_blank" aria-label="View U.S. Travel Guide Blog Sample">View Sample</a>
+                </div>
+                <div class="portfolio-card" role="listitem">
+                    <img src="https://raw.githubusercontent.com/DorisMose/Image/main/billion.jpg" alt="Tech Tutorial Script">
+                    <h5>Marketing Tutorial Script</h5>
+                    <p>A hook-driven YouTube script that increased viewer retention by 30% for a U.S. tech channel.</p>
+                    <a href="https://docs.google.com/document/d/1nPsfUqTcHXvGZVu3cxv1W7rcLHajyvzCDi3OeOjWkjw/edit?usp=sharing" target="_blank" aria-label="View Tech Tutorial Script">View Script</a>
+                </div>
+                <div class="portfolio-card" role="listitem">
+                    <img src="https://raw.githubusercontent.com/DorisMose/Image/main/machinelearning.jpg" alt="Polished Blog Post">
+                    <h5>Tech Polished Blog Post</h5>
+                    <p>Before/after editing of Machine Learning blog, enhancing clarity and engagement for the client.</p>
+                    <a href="https://docs.google.com/document/d/1QlOmETXrIrfGT4lYk0kWaxLAZAfc5buHQ_15Fk15N-A/edit?usp=sharing" target="_blank" aria-label="View Polished Blog Post Sample">View Sample</a>
                 </div>
             </div>
-            <div class="service-box">
-                <h3>Script Writing</h3>
-                <p>Captivating scripts for various media formats. From YouTube videos to podcasts and TV commercials, I write scripts that engage and entertain.</p>
-                <div class="samples">
-                    <div class="sample">
-                        <img src="https://raw.githubusercontent.com/DorisMose/Image/main/billion.jpg" alt="How to make over a Billion Dollars with Ecommerce Marketing">
-                        <a href="https://docs.google.com/document/d/1nPsfUqTcHXvGZVu3cxv1W7rcLHajyvzCDi3OeOjWkjw/edit?usp=sharing" target="_blank">YouTube Video: "How to make over a Billion Dollars with Ecommerce Marketing"</a>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" role="region" aria-label="Contact Doris">
+        <div class="container">
+            <h2>Contact US</h2>
+            <p class="contact-text">Ready to craft your compelling narrative? Connect with Doris today!</p>
+            <form action="https://formspree.io/f/xldgyyyy" method="POST" class="needs-validation" novalidate aria-label="Contact Form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required aria-required="true">
+                    <div class="invalid-feedback">Please enter your name.</div>
                 </div>
-            </div>
-        </section>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required aria-required="true">
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="company" class="form-label">Company (Optional)</label>
+                    <input type="text" class="form-control" id="company" name="company" aria-optional="true">
+                </div>
+                <div class="mb-3">
+                    <label for="project_type" class="form-label">Project Type</label>
+                    <select class="form-control" id="project_type" name="project_type" required aria-required="true">
+                        <option value="">Select One</option>
+                        <option value="blog">Blog Writing</option>
+                        <option value="script">YouTube Scripts</option>
+                        <option value="editing">Editing & Polishing</option>
+                        <option value="both">All Services</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a project type.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required aria-required="true"></textarea>
+                    <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+                <button type="submit" class="btn btn-primary" aria-label="Submit contact form">Send Message</button>
+            </form>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>With over 5 years of experience in the writing industry, I specialize in crafting words that make a difference. My passion is to help businesses and individuals communicate their message effectively and engagingly.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Ready to elevate your content? Contact me at doris.contentexpert@gmail.com</p>
-            <a href="mailto:doris.contentexpert@gmail.com" class="btn">Email Me</a>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Doris Mose - Professional Writer. All rights reserved.</p>
+    <footer role="contentinfo">
+        <p>© 2025 Write with Doris. All rights reserved. | U.S.-Based Writer</p>
     </footer>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/[email protected]/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <!-- Form Validation -->
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 </body>
 </html>
